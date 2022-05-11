@@ -22,7 +22,7 @@ namespace Web_APIcharter.Controllers
                                 </Chart>";
 
 
-            new Chart(width: ancho, height: alto, theme: ChartTheme.Yellow)
+            new Chart(width: ancho, height: alto, theme: ChartTheme.Green)
             //.AddTitle("Chart for languages")
                  .AddSeries(chartType: "radar",
                    xValue: new[] { "ASP.NET", "HTML5", "C Language", "C++" },
