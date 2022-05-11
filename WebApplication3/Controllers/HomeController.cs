@@ -12,14 +12,22 @@ namespace Web_APIcharter.Controllers
         {
             return View();
         }
-        public ActionResult CharterHelp(int ancho=500, int alto=500)
+        public ActionResult CharterHelp(int ancho=500, int alto=500, int v1=90, int v2=100, int v3=80, int v4=70)
         {
-            new Chart(width: ancho, height: alto)
+            string myTheme =
+                   @"<Chart BackColor=""Transparent"" >
+                                    <ChartAreas>
+                                        <ChartArea Name=""Default"" BackColor=""Transparent""></ChartArea>
+                                    </ChartAreas>
+                                </Chart>";
+
+
+            new Chart(width: ancho, height: alto, theme: ChartTheme.Yellow)
             //.AddTitle("Chart for languages")
                  .AddSeries(chartType: "radar",
                    xValue: new[] { "ASP.NET", "HTML5", "C Language", "C++" },
-                     yValues: new[] { "90", "100", "80", "70" })
-                   .Write("bmp");
+                     yValues: new[] { v1, v2, v3, v4 })
+                   .Write("png");
             return null;
         }
     }
